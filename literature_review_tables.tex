@@ -1,0 +1,34 @@
+% Requires tabularx and array packages and the Y column type defined in main.tex.
+\begin{table*}[!t]
+\caption{Literature review of selected prompt-injection studies}
+\label{tab:literature}
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}YY@{}}
+\hline
+\textbf{Study} & \textbf{Contribution} & \textbf{Remaining gap or limitation} \\
+\hline
+Perez and Ribeiro (2022) \cite{perez2022ignore} & Demonstrated goal hijacking and prompt leakage with direct attacks. & Early text-based demonstrations; limited application and tool context. \\
+Greshake et al. (2023) \cite{greshake2023not} & Showed indirect instructions in material retrieved by LLM applications. & Illustrative applications; no common benchmark or outcome definition. \\
+Liu et al. (2024) \cite{liu2024formalizing} & Formalized prompt injection and benchmarked attacks and defences. & Broad text tasks; limited evidence about committed agent actions. \\
+Toyer et al. (2024) \cite{toyer2024tensor} & Collected large-scale extraction and hijacking attacks in Tensor Trust. & Online-game rules differ from deployed application workflows. \\
+Yi et al. (2025) \cite{yi2025benchmarking} & Studied indirect attacks in tasks consuming external content. & Results depend on task-specific checks and tested defences. \\
+Zhan et al. (2024) \cite{zhan2024injecagent} & Introduced InjecAgent for tool-integrated harm and exfiltration. & Results depend on tool interfaces and prompt configuration. \\
+Debenedetti et al. (2024) \cite{debenedetti2024agentdojo} & Introduced AgentDojo to measure security and task completion. & Outcomes vary with benchmark version, model, and attack budget. \\
+Wang et al. (2026) \cite{wang2026mcptox} & Benchmarked poisoning of MCP tool descriptions with MCPTox. & Longer trajectories and downstream effects need separate tests. \\
+Hines et al. (2024) \cite{hines2024spotlighting} & Used Spotlighting to mark lower-trust content provenance. & The model must honor the marker; transformations may distort useful data. \\
+Wallace et al. (2024) \cite{wallace2024hierarchy} & Trained models to prioritize higher-authority instructions. & Transfer to new source roles and conflicts remains uncertain. \\
+Chen et al. (2025), StruQ \cite{chen2025struq} & Combined a structured front end with instruction-aware tuning. & Requires serialization integrity and access to a suitable tuned model. \\
+Chen et al. (2025), SecAlign \cite{chen2025secalign} & Used preference optimization to favor authorized task completion. & Coverage of unseen attacks and benign capability loss need testing. \\
+Debenedetti et al. (2025), CaMeL \cite{debenedetti2025camel} & Enforced capability-aware control and data-flow policies. & Policy correctness, integration cost, and answer integrity remain. \\
+Bhagwatkar et al. (2025) \cite{bhagwatkar2025firewalls} & Tested tool firewalls, minimization, and sanitization. & Sanitizers can be bypassed; benchmark saturation can mislead. \\
+Zhan et al. (2025) \cite{zhan2025adaptive} & Demonstrated adaptive bypasses of tested indirect-injection defences. & Findings are conditional on tested systems and attack budgets. \\
+Nasr et al. (2026) \cite{nasr2026attacker} & Evaluated stronger adaptive searches across jailbreak and injection goals. & Mixed objectives prevent a universal prompt-injection success rate. \\
+Li et al. (2026) \cite{li2026heuristics} & Identified surface heuristics and false refusals in trained defences. & Controlled tests do not establish prevalence across all models. \\
+He et al. (2026), AttriGuard \cite{he2026attriguard} & Checked causal support for proposed tool actions with replay. & Adds inference overhead; counterfactual fidelity matters. \\
+He et al. (2026), RETA \cite{he2026reta} & Combined task-grounded reasoning with adversarial training. & Preprint evidence; utility and coverage need broader replication. \\
+Karamchandani et al. (2026) \cite{karamchandani2026tprs} & Tested sensitivity of agent benchmarks to tool-name changes. & Naming and tokenization effects were not isolated. \\
+\hline
+\end{tabularx}
+\end{table*}
